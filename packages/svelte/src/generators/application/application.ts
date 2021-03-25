@@ -3,10 +3,11 @@ import {
   formatFiles,
   generateFiles,
   getWorkspaceLayout,
-  joinPathFragments,
+  joinPathFragments, logger,
   names,
   offsetFromRoot,
   Tree,
+  stripIndents
 } from '@nrwl/devkit';
 import { NormalizedSchema, SvelteApplicationSchema } from './schema';
 import { addProject } from './lib/add-project';
@@ -69,6 +70,12 @@ export async function applicationGenerator(
   schema: SvelteApplicationSchema
 ) {
   const options = normalizeOptions(tree, schema);
+  if(options.bundler === 'vite') {
+    logger.info(stripIndents`
+      The Vite feature is experimental, be aware!!
+    `);
+  }
+
   const initTask = await initGenerator(tree, { ...options, skipFormat: true });
 
   addProject(tree, options);

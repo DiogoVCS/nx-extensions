@@ -1,5 +1,5 @@
 export const nxextVersion = '11.2.0';
-export const stencilVersion = '^2.4.0';
+export const stencilVersion = '^2.5.0';
 export const stencilRouterVersion = '^1.0.1';
 export const ionicVersion = '^5.5.0';
 
@@ -19,7 +19,7 @@ export const STENCIL_OUTPUTTARGET_VERSION: {
 } = {
   react: '^0.0.9',
   angular: '^0.0.5',
-  vue: '^0.3.0',
+  vue: '^0.4.1',
   svelte: '^0.0.3',
 };
 

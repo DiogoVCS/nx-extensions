@@ -1,16 +1,16 @@
 import {
   checkFilesExist,
-  ensureNxProject,
   readJson,
   renameFile,
   runNxCommandAsync,
   uniq,
 } from '@nrwl/nx-plugin/testing';
 import { normalize } from '@angular-devkit/core';
+import { ensureNxProjectWithDeps } from '../../tailwind-e2e/utils/testing';
 
 describe('e2e', () => {
   beforeAll(() => {
-    ensureNxProject('@nxext/stencil', 'dist/packages/stencil');
+    ensureNxProjectWithDeps('@nxext/stencil', 'dist/packages/stencil');
   });
 
   describe('library', () => {
